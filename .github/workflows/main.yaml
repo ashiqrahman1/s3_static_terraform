@@ -25,7 +25,7 @@ jobs:
         run: terraform -chdir=infra init
 
       - name: terraform plan
-        run: terraform plan
+        run: terraform -chdir=infra plan
 
       - name: terraform apply
-        run: terraform apply -auto-approve
+        run: terraform -chdir=infra apply -auto-approve
