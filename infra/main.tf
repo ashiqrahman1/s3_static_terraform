@@ -18,10 +18,6 @@ provider "aws" {
   region = "us-east-1"
 }
 
-data "local_file" "foo" {
-  filename = "${path.module}/public/123"
-}
-
 resource "aws_s3_bucket" "mybucket" {
   bucket = "cmcloudlab520.info"
 
@@ -29,10 +25,4 @@ resource "aws_s3_bucket" "mybucket" {
     Name        = "My Bucket"
     Environment = "Dev"
   }
-}
-
-resource "aws_s3_object" "test_object" {
-  bucket = aws_s3_bucket.mybucket.bucket
-  source = data.local_file.foo.content
-  key    = "123"
 }
