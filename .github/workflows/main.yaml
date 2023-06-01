@@ -3,6 +3,7 @@ name: terraform github action testing
 on:
   push:
     branches: ["main"]
+    paths: ["infra/**"]
 
 jobs:
   terraform:
