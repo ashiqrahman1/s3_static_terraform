@@ -20,12 +20,3 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-      - name: terraform int
-        run: terraform -chdir=infra init
-
-      - name: terraform plan
-        run: terraform -chdir=infra plan
-
-      - name: terraform apply
-        run: terraform -chdir=infra apply -auto-approve
