@@ -29,5 +29,5 @@ resource "aws_s3_bucket" "mybucket" {
 
 resource "aws_s3_object" "test_object" {
   bucket = aws_s3_bucket.mybucket.bucket
-  key    = "../test"
+  key    = file("${path.module}/123")
 }
