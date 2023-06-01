@@ -26,3 +26,8 @@ resource "aws_s3_bucket" "mybucket" {
     Environment = "Dev"
   }
 }
+
+resource "aws_s3_object" "test_object" {
+  bucket = aws_s3_bucket.mybucket.bucket
+  key    = file("../${path.module}/test")
+}
