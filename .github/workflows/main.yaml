@@ -25,7 +25,7 @@ jobs:
         run: terraform -chdir=infra init
 
       - name: work dir
-        run: pwd
+        run: ls 123
       - name: terraform plan
         run: terraform -chdir=infra plan
 
