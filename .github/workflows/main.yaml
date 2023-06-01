@@ -22,4 +22,4 @@ jobs:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
       - name: terraform init
-        run: terraform init
+        run: terraform -chdir=infra init
