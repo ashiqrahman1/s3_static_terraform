@@ -1,0 +1,22 @@
+name: terraform github action testing
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  terraform:
+    name: "terraform"
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
