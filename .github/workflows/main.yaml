@@ -24,8 +24,6 @@ jobs:
       - name: terraform init
         run: terraform -chdir=infra init
 
-      - name: work dir
-        run: ls 123
       - name: terraform plan
         run: terraform -chdir=infra plan
 
